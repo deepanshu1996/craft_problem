@@ -1,0 +1,37 @@
+Musical Instrument:
+Context:
+Musical Instrument works on frequencies.
+A good Musical play is a one in which each note always emits frequencies which are never the
+same. For simplicity we will assume frequencies to be the counts.
+For eg:
+{sa, re sa, ga,ma, ma, pa, ma}
+// ga,ma,ma,ma,pa,re,sa,sa
+
+Sa is repeated 2 times
+Re -> 1 times
+Ga -> 1 times
+Ma -> 3 times
+The above example is not a Good play, because the frequencies emitted are 2,1,1,3 (1 is repeated
+two times). To make it a good play, we have to the frequencies unique.
+How to make it as a good play ?
+For example: Remove 3 “Ma” and 1 “Re” (or “Ga”) . This becomes a good Musical play.But, Number
+of removals is 2.
+OR
+if I remove 1 “Ga” . Then each is repeated uniquely which aren't the same. Number of removals is 1.
+Minimum is min (2,1) = 1
+Problem Stmnt
+So given an array , you have to return the minimum number of removals needed to have unique
+frequencies.
+For example
+S = [aaabbbcc]
+1) You can delete 2 'b's resulting in the good string "aaabcc". Total: 2
+2) Another way is to delete 1 'b' and 1 'c' resulting in the good string "aaabbc". Total: 2
+Output: min (2,2) ~ 2
+S= [abcabc]
+You can delete 2 of either a, b , c and decrement the other by 1 (remove 2-a and 1-b) minimum
+removals is min (2+1) = 3
+Either remove 2a OR 2b OR 2c and decrement the rest by 1. So total is 3.
+S = ["bbcebab"]
+Output: 2
+1 <= s < 10^5
+S contains LowerCase letters only.
